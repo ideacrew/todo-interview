@@ -1,0 +1,27 @@
+<h1><%= @todo_list.improve_title_text %></h1>
+
+<% if flash[:error] %>
+	<!-- <p style="color:red"><%#= display_form_errors(flash[:error]) %></p> -->
+	<p style="color:red"><%= flash[:error] %></p>
+<% end %>
+
+<%= form_for @todo_list, url: { action: "update" } do |f| %>
+	<%= f.text_field :title %>
+<%= f.submit %>
+<% end %>
+
+<h2>Items:</h2>
+<% @todo_list.todo_list_items.each do |item|  %>
+	<%#= form_tag todo_list_item_path(item), method: :patch do %>
+		<%#= text_field_tag :description, item.description, name: "todo_list_item[description]" %>
+		<%#= submit_tag "Update" %>
+	<%# end %>
+	<%= form_for item do |f| %>
+		<%= f.text_field :description %>
+		<%= f.label :done %>
+		<%= f.check_box :completed %>
+		<%= f.submit %>
+	<% end %>
+<% end %>
+<br>
+<%= link_to "Homepage", todo_lists_path %>

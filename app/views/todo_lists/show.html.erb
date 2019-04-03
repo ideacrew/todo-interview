@@ -1,0 +1,31 @@
+<h2><%= @todo_list.improve_title_text %></h2> 
+
+<p style="color:red;"><%= display_form_errors(flash[:error]) if flash[:error] %></p>
+<p style="color:green;"><%= flash[:success] if flash[:success] %></p>
+
+<%= form_for @todo_list.todo_list_items.build do |f| %> 
+	<%= f.text_field :description, place_holder: "write your description here" %>
+	<%= f.hidden_field :todo_list_id, value: @todo_list.id %>
+	<%= f.submit "Create a todo list item" %>
+<% end %>
+
+<h3>Todo List Items:</h3>
+<% @todo_list.todo_list_items.reload.each do |item| %>
+	<p>
+		<% if item.completed? %>
+			<span id='desc'>item.description</span> 
+		<% else %>
+			<%= item.description %>
+		<% end %>
+		<%= link_to "Edit", edit_todo_list_item_path(item) %> |
+		<%= link_to "Delete", todo_list_item_path(item), method: :delete, data: { confirm: "Are you sure?" } %>
+	</p>
+<% end %>
+
+<%= link_to "Homepage", todo_lists_path %>
+
+<style>
+	#desc {
+		text-decoration: line-through;
+	}
+</style>

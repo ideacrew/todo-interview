@@ -1,0 +1,13 @@
+<h2>Create a Todo List</h2>
+
+<p style="color:red;"><%= display_form_errors(flash[:error]) if flash[:error] %></p>
+<p style="color:green;"><%= flash[:success] if flash[:success] %></p>
+
+<%= form_for @todo_list, url: { action: :create } do |f| %>
+	<%= f.text_field :title, placeholder: "Enter a Title" %>
+	<%= f.submit %>
+<% end %>
+
+<br>
+
+<button><%= link_to "Home Page", todo_lists_path %></button>
