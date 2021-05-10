@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...YO@!
+Instructions for rails take home:
+1. Clone the repo from https://github.com/bill-transue/todo-app
+2. Complete the #create and #update actions in both controllers, making all the specs pass
+3. Bonus points for rewriting the routes.rb using Rails’s resources  method will keeping the build green.
+4. Return the completed code, the preferred method is with a git bundle by running git bundle create completed_todo.bundle origin/master..HEAD after commiting your changes and sending us the completed_todo.bundle file. Also accepted is a zip file of your local repo.
