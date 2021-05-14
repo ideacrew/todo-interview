@@ -1,5 +1,7 @@
 # README
 
+_Please spend no more than two hours on this exercise._
+
 Instructions for rails take home:
 1. Clone this repo
 2. Complete the `#create` and `#update` actions in both controllers, making all the specs pass
