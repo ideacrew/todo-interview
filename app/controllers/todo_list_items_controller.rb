@@ -4,17 +4,17 @@ class TodoListItemsController < ApplicationController
     @todo_list_items = @todo_list.todo_list_items.new
   end
 
-	def create
-	end
+  def create
+  end
 
-	def show
-	end
+  def show
+  end
 
-	def edit
-	end
+  def edit
+  end
 
-	def update
-	end
+  def update
+  end
 
   def destroy
   end
