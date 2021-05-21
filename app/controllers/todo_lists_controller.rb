@@ -32,19 +32,13 @@ class TodoListsController < ApplicationController
 	def create
 	end
 
-	def edit
-		@todo_list = TodoList.find(params[:id])
-		# byebug
-	end
+  def edit
+    @todo_list = TodoList.find(params[:id])
+  end
 
 	def update
 	end
 
-	def destroy
-	end
-
-	private
-	    def permitted_params
-	      params.require(:todo_list).permit(:title)
-	    end
+  def destroy
+  end
 end
