@@ -105,9 +105,7 @@ RSpec.describe "Todo List", :type => :request do
 
       it "should also update the todo_list_item and then redirect to todo_list" do
         patch todo_list_item_path(todo_list_item), params: { todo_list_item: { description: "updated first item"} }
-        expect(response).to redirect_to assigns :todo_list
-        todo_list_item
-        follow_redirect!
+        expect(response).to redirect_to todo_list_path
       end
     end
 
