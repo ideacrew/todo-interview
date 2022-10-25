@@ -27,11 +27,9 @@ RSpec.describe TodoListItemsController, type: :controller do
   describe "POST create" do
 
     context "with valid params" do
-      # before { post :create, params: { todo_list_id: todo_list.id, todo_list_item: { description: "need to call BT for connection arrangements", completed: false } } }
       before { post :create, params: { todo_list_item: { description: "need to call BT for connection arrangements", todo_list_id: todo_list.id, completed: false } } }
 
       it "should redirect back to todo_list new form" do
-        # byebugclear
         expect(response).to redirect_to(todo_list_path(todo_list))
       end
     end
@@ -87,7 +85,6 @@ RSpec.describe TodoListItemsController, type: :controller do
   describe "PATCH update" do
 
     context "with valid attributes" do
-    # before { patch :update, params: { todo_list_id: todo_list.id, id: todo_list_items.first.id, description: "Updated" } }
     before { patch :update, params: { id: todo_list_items.first.id, todo_list_item: { description: "Updated", todo_list_id: todo_list.id } } }
 
       it "should redirect to show page" do
@@ -95,7 +92,6 @@ RSpec.describe TodoListItemsController, type: :controller do
       end
 
       it "should flash success message" do
-        # expect(flash[:success]).to match("todo list item was successfully updated!")
         expect(flash[:success]).to match("Todo list item was successfully updated!")
       end
     end

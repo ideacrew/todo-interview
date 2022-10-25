@@ -17,7 +17,6 @@ RSpec.describe TodoListsController, type: :controller do
 
       it "should render 'index' as json" do
         get :index, format: :json
-        # expect(response).to render_template({})
         expect(response.body).to eq "[]"
       end
     end
@@ -114,12 +113,6 @@ RSpec.describe TodoListsController, type: :controller do
       it "responds to custom formats when provided in the params" do
         expect(response.content_type).to eq "application/json"
       end
-
-      # it "should display contents of todo list" do
-      #   parsed_body = JSON.parse(response.body)
-      #   byebug
-      #   expect(parsed_body.title).to eq todo_list[0]
-      # end
     end
 
     context "Unsuccessful: Create a Todo List format:JSON" do
